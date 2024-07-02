@@ -1,0 +1,59 @@
+@use "@scss/common.scss" as *;
+
+
+.infoContainer {
+    position: relative;
+    margin-top: -7rem;
+
+    @include mid-break {
+        margin-top: -2rem;
+    }
+}
+
+.infoWrapper {
+    background-color: white;
+    box-shadow: var(--shadow-elevation-high);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-top: calc(var(--base)*2);
+    padding-left: 2rem;
+    padding-right: 2rem; 
+    padding-bottom: calc(var(--base)*2);
+
+}
+
+.tag {
+    @include label; 
+    margin: 0; 
+    
+    margin-bottom: calc(var(--base));
+}
+
+.title {
+    @include h2;
+    margin: 0; 
+    margin-bottom: calc(var(--base)*2);
+    text-align: center;
+}
+
+.summary {
+    @include small; 
+    text-align: center;
+}
+
+.mediaWrapper {
+    text-decoration: none;
+    display: block; 
+    position: relative;
+    aspect-ratio: 16/4;
+
+    @include mid-break{
+        aspect-ratio: 16/9;
+    }
+}
+
+.image {
+    object-fit: cover;
+}
