@@ -1,0 +1,22 @@
+@use "@scss/common.scss" as *; 
+
+
+
+.ctaContainer {
+    background-color: var(--theme-bg);
+    padding: var(--base) 0;
+}
+
+.content {
+    @include h3;
+}
+
+.actions {
+    @include h1;
+    margin: 0;
+    border: 1px solid; 
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
