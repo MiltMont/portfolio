@@ -9,9 +9,6 @@
     padding: calc(var(--base)*4) 0;
 }
 
-.footerColumn {
-}
-
 .columnHeading {
     @include h3;
 }
@@ -24,3 +21,10 @@
 .link {
     text-decoration: none;
 }
+
+.logoLg {
+    @include mid-break {
+        @include visually-hidden; 
+    }
+}
+

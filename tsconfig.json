@@ -22,7 +22,8 @@
       "@components/*": ["./src/components/*"],
       "@scss/*": ["./src/css/*"],
       "@types": ["./src/payload-types.ts"],
-      "@layout/*": ["./src/layout/*"]
+      "@layout/*": ["./src/layout/*"],
+      "@graphics/*": ["./src/graphics/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

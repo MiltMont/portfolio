@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { dummyRoutes, dummySocial } from "../../../public/dummData";
 import { Gutter } from "@components/Gutter";
+import { FullLogo } from "@graphics/FullLogo";
 
 import classes from "./classes.module.scss";
 
@@ -12,6 +13,13 @@ export const Footer: React.FC<any> = ({}) => {
       <footer
         className={[classes.footerWrapper, "grid"].filter(Boolean).join(" ")}
       >
+        <div
+          className={[classes.logoLg, "start-1 cols-8"]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          <FullLogo size={"lg"} />
+        </div>
         <div
           className={[classes.footerColumn, "start-9 cols-4 start-m-1 cols-m-4"]
             .filter(Boolean)
