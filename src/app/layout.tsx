@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 
 import { Providers } from "../providers";
+import { Footer } from "@layout/Footer";
 
 import "../css/app.scss";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={[robotoMono.variable, inter.variable].join(" ")}>
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );

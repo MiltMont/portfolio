@@ -1,0 +1,26 @@
+@use "@scss/common.scss" as *; 
+
+.footerContainer {
+    border-top: 1px solid; 
+    border-color: var(--theme-border-color);
+}
+
+.footerWrapper {
+    padding: calc(var(--base)*4) 0;
+}
+
+.footerColumn {
+}
+
+.columnHeading {
+    @include h3;
+}
+
+.columnLabel {
+    @include label; 
+    
+}
+
+.link {
+    text-decoration: none;
+}
