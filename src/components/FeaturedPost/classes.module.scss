@@ -12,7 +12,7 @@
 
 .infoWrapper {
     background-color: var(--theme-bg);
-    box-shadow: var(--shadow-elevation-high);
+    box-shadow: var(--shadow-elevation-medium);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +23,10 @@
     padding-bottom: calc(var(--base)*2);
 
     @include data-theme-selector('dark') {
-        box-shadow: var(--shadow-elevation-low)
+        box-shadow: none;
+        border: 1px solid; 
+        border-color: var(--theme-border-color)
+        
     }
 }
 
