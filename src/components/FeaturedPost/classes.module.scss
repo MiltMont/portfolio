@@ -11,7 +11,7 @@
 }
 
 .infoWrapper {
-    background-color: white;
+    background-color: var(--theme-bg);
     box-shadow: var(--shadow-elevation-high);
     display: flex;
     flex-direction: column;
@@ -22,6 +22,9 @@
     padding-right: 2rem; 
     padding-bottom: calc(var(--base)*2);
 
+    @include data-theme-selector('dark') {
+        box-shadow: var(--shadow-elevation-low)
+    }
 }
 
 .tag {
