@@ -1,0 +1,37 @@
+@use "@scss/common.scss" as *; 
+
+.mobileNav {
+    display: none; 
+    visibility: hidden; 
+    width: 100%;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+
+    @include mobile-header-break {
+        display: block; 
+        visibility: visible;
+    }
+}
+
+.menuBarContainer {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--base) 0; 
+
+    & a {
+        color: var(--theme-elevation-900);
+    }
+}
+
+.logo {
+    position: relative; 
+}
+
+.icons {
+    
+    & path, & rect {
+        color: var(--theme-elevation-900);
+      }
+
+}

@@ -18,13 +18,13 @@
       }
     ],
     "paths": {
-      "@root/": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@scss/*": ["./src/css/*"],
       "@types": ["./src/payload-types.ts"],
       "@layout/*": ["./src/layout/*"],
       "@graphics/*": ["./src/graphics/*"],
-      "@utilities/*": ["./src/utilities/*"]
+      "@utilities/*": ["./src/utilities/*"],
+      "@root/": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
