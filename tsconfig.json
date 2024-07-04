@@ -24,7 +24,8 @@
       "@layout/*": ["./src/layout/*"],
       "@graphics/*": ["./src/graphics/*"],
       "@utilities/*": ["./src/utilities/*"],
-      "@root/": ["./src/*"]
+      "@root/*": ["./src/*"],
+      "@providers/*": ["./src/providers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
