@@ -18,7 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src*"],
+      "@root/": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@scss/*": ["./src/css/*"],
       "@types": ["./src/payload-types.ts"],

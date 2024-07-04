@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const sizes = {
-  sm: "45",
+  sm: "50",
   md: "100",
   lg: "200",
 };
