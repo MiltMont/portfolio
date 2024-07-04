@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import canUseDom from "@//utilities/can-use-dom";
+import canUseDom from "@utilities/can-use-dom";
 import {
   defaultTheme,
   getImplicitPreference,

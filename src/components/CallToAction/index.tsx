@@ -1,5 +1,5 @@
 import React from "react";
-import { Gutter } from "../Gutter";
+import { Gutter } from "@components/Gutter";
 import classes from "./classes.module.scss";
 
 export const CallToAction: React.FC<any> = ({}) => {

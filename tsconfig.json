@@ -23,7 +23,8 @@
       "@scss/*": ["./src/css/*"],
       "@types": ["./src/payload-types.ts"],
       "@layout/*": ["./src/layout/*"],
-      "@graphics/*": ["./src/graphics/*"]
+      "@graphics/*": ["./src/graphics/*"],
+      "@utilities/*": ["./src/utilities/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

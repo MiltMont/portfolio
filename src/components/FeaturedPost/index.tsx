@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Gutter } from "../Gutter";
+import { Gutter } from "@components/Gutter";
 
 import classes from "./classes.module.scss";
 
