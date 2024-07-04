@@ -5,8 +5,8 @@ import { Providers } from "../providers";
 import { Footer } from "@layout/Footer";
 
 import "../css/app.scss";
-import { DesktopNavigation } from "@layout/Header/DesktopNavigation";
 import { Header } from "@layout/Header";
+import { mainMenu } from "@root/data/menuDummyData";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const robotoMono = Roboto_Mono({
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={[robotoMono.variable, inter.variable].join(" ")}>
         <Providers>
-          <Header />
+          <Header {...mainMenu} />
           {children}
           <Footer />
         </Providers>

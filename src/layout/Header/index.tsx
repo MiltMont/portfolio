@@ -11,7 +11,7 @@ import { MainMenu } from "@types";
 
 import classes from "./classes.module.scss";
 
-export const Header: React.FC<any> = () => {
+export const Header: React.FC<MainMenu> = ({ tabs }) => {
   const { isModalOpen } = useModal();
   const isMobileNavigationOpen = isModalOpen(mobileNavigationModalSlug);
 
@@ -26,7 +26,7 @@ export const Header: React.FC<any> = () => {
           .join(" ")}
       >
         <DesktopNavigation />
-        <MobileNavigation />
+        <MobileNavigation tabs={tabs} />
       </header>
     </div>
   );
