@@ -9,7 +9,7 @@ export const Providers: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   return (
     <ThemePreferenceProvider>
-      <ModalProvider transTime={250} zIndex="var(--z-modal)">
+      <ModalProvider transTime={0} zIndex="var(--z-modal)">
         {children}
         <ModalContainer />
       </ModalProvider>

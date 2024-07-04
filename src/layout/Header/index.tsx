@@ -1,19 +1,31 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Gutter } from "@components/Gutter";
+import { DesktopNavigation } from "./DesktopNavigation";
+import {
+  MobileNavigation,
+  modalSlug as mobileNavigationModalSlug,
+} from "./MobileNavigation";
+import { useModal } from "@faceless-ui/modal";
+import { MainMenu } from "@types";
 
 import classes from "./classes.module.scss";
-import { DesktopNavigation } from "./DesktopNavigation";
-import { MobileNavigation } from "./MobileNavigation";
 
-export const Header: React.FC<any> = ({}) => {
+export const Header: React.FC<MainMenu> = ({ tabs }) => {
+  const { isModalOpen } = useModal();
+  const isMobileNavigationOpen = isModalOpen(mobileNavigationModalSlug);
+
   return (
     <div>
-      <header className={[classes.header].filter(Boolean).join(" ")}>
+      <header
+        className={[
+          classes.header,
+          isMobileNavigationOpen && classes.mobileNavigationOpen,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
         <DesktopNavigation />
-
         <MobileNavigation />
       </header>
     </div>
