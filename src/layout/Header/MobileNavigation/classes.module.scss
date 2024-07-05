@@ -192,6 +192,12 @@
     text-decoration: none;
 }
 
+.listLabelWrap {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+
 .listLabel {
     @include h5;
     display: flex;
@@ -203,4 +209,17 @@
 .itemDescription {
     @include small;
     line-height: 1.5;
+}
+
+
+.backButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem ;
+    cursor: pointer;
+    position: relative;
+    @include h5; 
+    margin: 0;
+    background-color: var(--theme-elevation-50);
 }

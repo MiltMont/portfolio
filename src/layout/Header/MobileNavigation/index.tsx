@@ -12,6 +12,8 @@ import { Theme } from "@providers/Theme/types";
 import { Modal, useModal } from "@faceless-ui/modal";
 import { usePathname } from "next/navigation";
 
+import { ArrowUpRight, NavArrowLeft, NavArrowRight } from "iconoir-react";
+
 type NavItems = Pick<MainMenu, "tabs">;
 
 export const modalSlug = "mobile-nav";
@@ -37,6 +39,7 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
               key={index}
             >
               {label}
+              <ArrowUpRight />
             </button>
           );
         }
@@ -50,6 +53,7 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
               key={index}
             >
               {label}
+              <NavArrowRight />
             </button>
           );
       })}
@@ -97,12 +101,15 @@ const SubMenuModal: React.FC<
                   e.stopPropagation();
                 }}
               >
-                &larr;
+                <NavArrowLeft />
+                Back
               </button>
               {tab.descriptionLinks && tab.descriptionLinks.length > 0 && (
                 <div className={classes.descriptionLinks}>
                   {tab.descriptionLinks.map((link, linkIndex) => (
-                    <div key={linkIndex}>Testt</div>
+                    <div className={classes.descriptionLink} key={linkIndex}>
+                      <ArrowUpRight />
+                    </div>
                   ))}
                 </div>
               )}
@@ -113,6 +120,7 @@ const SubMenuModal: React.FC<
                       <div className={classes.listLabelWrap}>
                         <div className={classes.listLabel}>
                           {item.defaultLink.link.label}
+                          <ArrowUpRight />
                         </div>
                         <div className={classes.itemDescription}>
                           {item.defaultLink.description}
