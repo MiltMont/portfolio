@@ -102,7 +102,7 @@ const SubMenuModal: React.FC<
               {tab.descriptionLinks && tab.descriptionLinks.length > 0 && (
                 <div className={classes.descriptionLinks}>
                   {tab.descriptionLinks.map((link, linkIndex) => (
-                    <div>Testt</div>
+                    <div key={linkIndex}>Testt</div>
                   ))}
                 </div>
               )}
