@@ -98,3 +98,109 @@
     z-index: -1;
 }
 
+.mobileMenuItems {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    z-index: 1; 
+}
+
+.mobileMenuItem {
+    @include btnReset; 
+    font-family: var(--font-body);
+    @include h4;
+    letter-spacing: -0.02em;
+    padding: 1.25rem;
+    font-weight: 500;
+    margin: 0; 
+    text-decoration: none;
+    color: var(--theme-text); 
+    width: 100%;
+    border-left: 1px solid var(--theme-border-color);
+    border-right: 1px solid var(--theme-border-color);
+    border-bottom: 1px solid var(--theme-border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--theme-bg);
+    
+    &:first-child {
+        border-top: 1px solid var(--theme-border-color);
+    }
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    @include mobile-header-break {
+        margin: 0; 
+    }
+}
+
+.mobileSubMenu {
+    z-index: 2;
+    background-color: var(--theme-bg);
+}
+
+.subMenuWrap {
+    position: relative;
+    padding: 1rem 0; 
+    top: 0; 
+    bottom: 0; 
+    min-height: 100%;
+}
+
+.subMenuItems {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        position: relative;
+        border: 1px solid var(--theme-border-color);
+        border-top: 0; 
+        padding: 1.25rem; 
+        background-color: var(--theme-bg);
+        z-index: 1; 
+    }
+
+    & a:focus {
+        text-decoration: none;
+    }
+
+    &:first-child {
+        border-top: 1px solid var(--theme-border-color);
+    }
+}
+
+.descriptionLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+    padding: 2rem 0;
+}
+
+.linkWrap {
+    position: relative;
+}
+
+.defaultLink, .listLabelWrap {
+    @include btnReset;
+    display: flex;
+    text-decoration: none;
+}
+
+.listLabel {
+    @include h5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0.5rem 0;
+}
+
+.itemDescription {
+    @include small;
+    line-height: 1.5;
+}
