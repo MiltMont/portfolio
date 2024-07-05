@@ -41,12 +41,13 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
           );
         }
         if (!enableDropdown) {
-          return <div>WHat?</div>;
+          return <div key={index}>WHat?</div>;
         } else
           return (
             <button
               className={classes.mobileMenuItem}
               onClick={() => handleOnClick(index)}
+              key={index}
             >
               {label}
             </button>
