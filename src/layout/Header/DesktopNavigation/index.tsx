@@ -1,11 +1,14 @@
 import React from "react";
-import Link from "next/link";
 import { Gutter } from "@components/Gutter";
 import { FullLogo } from "@graphics/FullLogo";
+import { MainMenu } from "@types";
+import Link from "next/link";
 
 import classes from "./classes.module.scss";
 
-export const DesktopNavigation: React.FC<any> = () => {
+type NavItems = Pick<MainMenu, "tabs">;
+
+export const DesktopNavigation: React.FC<NavItems> = ({ tabs }) => {
   return (
     <div className={classes.desktopNavigation} style={{ width: "100%" }}>
       <Gutter className={classes.desktopNavigation}>
@@ -19,7 +22,21 @@ export const DesktopNavigation: React.FC<any> = () => {
             className={[classes.content, "cols-8"].filter(Boolean).join(" ")}
           >
             <div className={classes.tabs}>
-              <button className={classes.tab}>Tab</button>
+              {(tabs || []).map((tab, tabIndex) => {
+                const { enableDirectLink = false, enableDropdown = false } =
+                  tab;
+                return (
+                  <div key={tabIndex}>
+                    <button className={classes.tab}>
+                      {enableDirectLink && tab.link?.url ? (
+                        <Link href={tab.link.url}>{tab.label}</Link>
+                      ) : (
+                        <>{tab.label}</>
+                      )}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

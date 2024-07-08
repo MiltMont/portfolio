@@ -40,7 +40,7 @@ export const Header: React.FC<MainMenu> = ({ tabs }) => {
           .filter(Boolean)
           .join(" ")}
       >
-        <DesktopNavigation />
+        <DesktopNavigation tabs={tabs} />
         <MobileNavigation tabs={tabs} />
       </header>
     </div>
