@@ -213,13 +213,12 @@
 
 
 .backButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem ;
-    cursor: pointer;
-    position: relative;
-    @include h5; 
-    margin: 0;
+    @include btnReset;
     background-color: var(--theme-elevation-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem; 
+    border: 1px solid var(--theme-border-color); 
+    border-top: none; 
 }

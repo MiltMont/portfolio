@@ -31,6 +31,14 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
       {(tabs || []).map((tab: any, index: number) => {
         const { link, label, enableDirectLink, enableDropdown } = tab;
 
+        if (!enableDropdown) {
+          return (
+            <button className={classes.mobileMenuItem} key={index}>
+              {label}
+              <ArrowUpRight />
+            </button>
+          );
+        }
         if (enableDirectLink) {
           return (
             <button
@@ -38,13 +46,10 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
               className={classes.mobileMenuItem}
               key={index}
             >
-              {label}
+              <b>{label}</b>
               <ArrowUpRight />
             </button>
           );
-        }
-        if (!enableDropdown) {
-          return <div key={index}>WHat?</div>;
         } else
           return (
             <button
