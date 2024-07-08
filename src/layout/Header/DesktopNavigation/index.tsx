@@ -114,7 +114,7 @@ export const DesktopNavigation: React.FC<NavItems> = ({
                   >
                     <button
                       className={classes.tab}
-                      ref={(r) => (menuItemRefs[tabIndex] = r)}
+                      //ref={(r) => (menuItemRefs[tabIndex] = r)}
                     >
                       {enableDirectLink ? (
                         <CMSLink
@@ -139,7 +139,7 @@ export const DesktopNavigation: React.FC<NavItems> = ({
                         ]
                           .filter(Boolean)
                           .join(" ")}
-                        ref={(ref) => (dropdownMenuRefs[tabIndex] = ref)}
+                        //ref={(ref) => (dropdownMenuRefs[tabIndex] = ref)}
                         onClick={resetHoverStyles}
                       >
                         <div
