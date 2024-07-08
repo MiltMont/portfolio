@@ -9,13 +9,60 @@
     z-index: var(--z-nav);
     transition: color 300ms ease;
     max-width: 100vw;
+
+    
+
+    @include mobile-header-break {
+        &:before, &:after {
+            transition: opacity 200ms ease; 
+        }
+    }
 }
 
+.header.headerTheme {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-bg);
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 500ms ease-out;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // backdrop-filter: blur(5px);
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
+}
+
+.header.hideBackground {
+    &:before {
+      opacity: 0;
+    }
+  
+    &:after {
+      opacity: 0;
+    }
+  }
+  
+  
 .header.mobileNavigationOpen {
-    background-color: var(--theme-bg);
     z-index: calc(var(--z-nav) + 12);
     border-bottom: 1px solid var(--theme-border-color);
-
+  
     &:before, &:after {
         opacity: 1;
       }

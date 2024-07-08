@@ -1,6 +1,7 @@
 @use '@scss/common.scss' as *; 
 
 .layout {
+    padding-top: var(--page-padding-top); 
     display: flex;
     background-color: black;
     color: white; 
