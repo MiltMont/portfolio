@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 import { Gutter } from "@components/Gutter";
 import { FullLogo } from "@graphics/FullLogo";
 import { MainMenu } from "@types";
@@ -28,11 +28,11 @@ export const DesktopNavigation: React.FC<NavItems> = ({
     number | undefined
   >(undefined);
 
+  //const menuItemRefs = [] as (HTMLButtonElement | null)[];
   const menuItemRefs = [] as (HTMLButtonElement | null)[];
-  //const menuItemRefs = React.useRef<(HTMLButtonElement | null)[]>(null);
   const dropdownMenuRefs = [] as (HTMLDivElement | null)[];
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (activeTab !== undefined) {
       const hoveredDropdownMenu = dropdownMenuRefs[activeTab];
       const bgHeight = hoveredDropdownMenu?.clientHeight || 0;
@@ -115,6 +115,7 @@ export const DesktopNavigation: React.FC<NavItems> = ({
                   >
                     <button
                       className={classes.tab}
+                      /* @ts-ignore */
                       ref={(r) => (menuItemRefs[tabIndex] = r)}
                     >
                       {enableDirectLink ? (
@@ -140,6 +141,7 @@ export const DesktopNavigation: React.FC<NavItems> = ({
                         ]
                           .filter(Boolean)
                           .join(" ")}
+                        /* @ts-ignore */
                         ref={(ref) => (dropdownMenuRefs[tabIndex] = ref)}
                         onClick={resetHoverStyles}
                       >
