@@ -13,6 +13,7 @@ import { Modal, useModal } from "@faceless-ui/modal";
 import { usePathname } from "next/navigation";
 
 import { ArrowUpRight, NavArrowLeft, NavArrowRight } from "iconoir-react";
+import { CMSLink } from "@components/CMSLink";
 
 type NavItems = Pick<MainMenu, "tabs">;
 
@@ -33,33 +34,39 @@ const NavigationItems = ({ tabs, setActiveTab }: any) => {
 
         if (!enableDropdown) {
           return (
-            <button className={classes.mobileMenuItem} key={index}>
-              {label}
+            <CMSLink
+              {...link}
+              label={label}
+              className={classes.mobileMenuItem}
+              key={index}
+            >
               <ArrowUpRight />
-            </button>
+            </CMSLink>
           );
         }
         if (enableDirectLink) {
           return (
-            <button
+            <CMSLink
+              {...link}
+              label={label}
               onClick={() => handleOnClick(index)}
               className={classes.mobileMenuItem}
               key={index}
             >
-              <b>{label}</b>
               <ArrowUpRight />
-            </button>
+            </CMSLink>
           );
         } else
           return (
-            <button
+            <CMSLink
+              {...link}
               className={classes.mobileMenuItem}
               onClick={() => handleOnClick(index)}
+              label={label}
               key={index}
             >
-              {label}
               <NavArrowRight />
-            </button>
+            </CMSLink>
           );
       })}
     </ul>
@@ -75,7 +82,12 @@ const MobileMenuModal: React.FC<
       className={classes.mobileMenuModal}
       trapFocus={false}
     >
-      <Gutter className={classes.mobileMenuWrap} dataTheme={`${theme}`}>
+      <Gutter
+        className={classes.mobileMenuWrap}
+        dataTheme={`${theme}`}
+        leftGutter={false}
+        rightGutter={false}
+      >
         <NavigationItems tabs={tabs} setActiveTab={setActiveTab} />
         <div className={classes.modalBlur} />
       </Gutter>
@@ -94,7 +106,12 @@ const SubMenuModal: React.FC<
       trapFocus={false}
       onClick={closeAllModals}
     >
-      <Gutter className={classes.subMenuWrap} dataTheme={`${theme}`}>
+      <Gutter
+        className={classes.subMenuWrap}
+        dataTheme={`${theme}`}
+        leftGutter={false}
+        rightGutter={false}
+      >
         {(tabs || []).map((tab, tabIndex) => {
           if (tabIndex !== activeTab) return null;
           return (
@@ -112,9 +129,14 @@ const SubMenuModal: React.FC<
               {tab.descriptionLinks && tab.descriptionLinks.length > 0 && (
                 <div className={classes.descriptionLinks}>
                   {tab.descriptionLinks.map((link, linkIndex) => (
-                    <div className={classes.descriptionLink} key={linkIndex}>
+                    <CMSLink
+                      {...link.link}
+                      className={classes.descriptionLink}
+                      key={linkIndex}
+                      label=""
+                    >
                       <ArrowUpRight />
-                    </div>
+                    </CMSLink>
                   ))}
                 </div>
               )}
@@ -122,15 +144,22 @@ const SubMenuModal: React.FC<
                 return (
                   <div className={classes.linkWrap} key={index}>
                     {item.style === "default" && item.defaultLink && (
-                      <div className={classes.listLabelWrap}>
-                        <div className={classes.listLabel}>
-                          {item.defaultLink.link.label}
-                          <ArrowUpRight />
+                      <CMSLink
+                        {...item}
+                        className={classes.defaultLink}
+                        {...item.defaultLink.link}
+                        label=""
+                      >
+                        <div className={classes.listLabelWrap}>
+                          <div className={classes.listLabel}>
+                            {item.defaultLink.link.label}
+                            <ArrowUpRight />
+                          </div>
+                          <div className={classes.itemDescription}>
+                            {item.defaultLink.description}
+                          </div>
                         </div>
-                        <div className={classes.itemDescription}>
-                          {item.defaultLink.description}
-                        </div>
-                      </div>
+                      </CMSLink>
                     )}
                   </div>
                 );
