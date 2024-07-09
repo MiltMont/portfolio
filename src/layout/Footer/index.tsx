@@ -1,17 +1,21 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { dummyRoutes, dummySocial } from "../../../public/dummData";
 import { Gutter } from "@components/Gutter";
 import { FullLogo } from "@graphics/FullLogo";
+import { Footer as FooterType } from "@types";
 
 import classes from "./classes.module.scss";
+import { CMSLink } from "@components/CMSLink";
 
-export const Footer: React.FC<any> = ({}) => {
+export const Footer: React.FC<FooterType> = (props) => {
+  const { columns } = props;
+  const [navigation, social] = columns ?? [];
+
   return (
     <Gutter className={classes.footerContainer}>
       <footer
         className={[classes.footerWrapper, "grid"].filter(Boolean).join(" ")}
+        data-theme="dark"
       >
         <div
           className={[classes.logoLg, "start-1 cols-8"]
@@ -25,12 +29,10 @@ export const Footer: React.FC<any> = ({}) => {
             .filter(Boolean)
             .join(" ")}
         >
-          <div className={classes.columnHeading}>Navigation</div>
-          {dummyRoutes.map((route, i) => (
+          <div className={classes.columnHeading}>{navigation.label}</div>
+          {navigation?.navItems?.map(({ link }, i) => (
             <div className={classes.columnLabel} key={i}>
-              <Link href={route.href} className={classes.link}>
-                {route.name}
-              </Link>
+              <CMSLink className={classes.link} {...link} />
             </div>
           ))}
         </div>
@@ -42,12 +44,10 @@ export const Footer: React.FC<any> = ({}) => {
             .filter(Boolean)
             .join(" ")}
         >
-          <div className={classes.columnHeading}>Social Media</div>
-          {dummySocial.map((route, i) => (
+          <div className={classes.columnHeading}>{social.label}</div>
+          {social?.navItems?.map(({ link }, i) => (
             <div className={classes.columnLabel} key={i}>
-              <Link href={route.href} className={classes.link}>
-                {route.name}
-              </Link>
+              <CMSLink className={classes.link} {...link} />
             </div>
           ))}
         </div>

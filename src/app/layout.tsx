@@ -26,14 +26,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { mainMenu, footer } = await fetchGlobals();
-  console.log(footer);
+
   return (
     <html lang="en">
       <body className={[robotoMono.variable, inter.variable].join(" ")}>
         <Providers>
           <Header {...mainMenu} />
           {children}
-          <Footer />
+          <Footer {...footer} />
         </Providers>
       </body>
     </html>

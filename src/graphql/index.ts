@@ -18,7 +18,6 @@ export const fetchGlobals = async (): Promise<{
     }
   ).then((res) => res.json());
 
-  console.log(data);
   return {
     mainMenu: data.MainMenu,
     footer: data.Footer,
