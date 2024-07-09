@@ -110,4 +110,19 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       </Link>
     );
   }
+
+  return (
+    <Link
+      href={href}
+      {...newTabProps}
+      className={className}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      prefetch={false}
+    >
+      {label && label}
+      {children && children}
+    </Link>
+  );
 };

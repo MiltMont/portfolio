@@ -15,6 +15,7 @@ export const fetchGlobals = async (): Promise<{
       body: JSON.stringify({
         query: GLOBALS,
       }),
+      next: { revalidate: 100 },
     }
   ).then((res) => res.json());
 
