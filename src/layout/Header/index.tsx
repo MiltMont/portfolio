@@ -26,8 +26,6 @@ export const Header: React.FC<MainMenu> = ({ tabs }) => {
     }
   }, [y, isMobileNavigationOpen]);
 
-  console.log(hideBackground);
-
   return (
     <div>
       <header
