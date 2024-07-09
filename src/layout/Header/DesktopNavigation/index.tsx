@@ -98,7 +98,7 @@ export const DesktopNavigation: React.FC<NavItems> = ({
               href="/"
               className={classes.logo}
               prefetch={false}
-              aria-label="Full Payload Logo"
+              aria-label="Logo"
             >
               <FullLogo />
             </Link>
