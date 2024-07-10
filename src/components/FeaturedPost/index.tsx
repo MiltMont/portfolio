@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Gutter } from "@components/Gutter";
 import Link from "next/link";
+import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-renderer";
 
 import classes from "./classes.module.scss";
 import type { Post, Media } from "@types";
@@ -36,9 +38,7 @@ export const FeaturedPost: React.FC<Post> = (props) => {
           {category && <div className={classes.tag}>{category.title}</div>}
           <div className={classes.title}>{title}</div>
           <div className={classes.summary}>
-            Here we explore some open questions about a simple and famous
-            invariant in Knot Theory. We explore a recent paper on the Fox
-            Conjecture.
+            <RichTextLexicalRenderer value={summary} />
           </div>
         </div>
       </Gutter>
