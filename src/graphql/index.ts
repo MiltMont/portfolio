@@ -1,6 +1,6 @@
 import type { MainMenu, Footer, Post } from "@types";
 import { GLOBALS } from "./globals";
-import { POSTS } from "./posts";
+import { POST, POSTS } from "./posts";
 
 export const fetchGlobals = async (): Promise<{
   mainMenu: MainMenu;
@@ -46,4 +46,24 @@ export const fetchBlogPosts = async (): Promise<Post[]> => {
   ).then((res) => res.json());
 
   return data?.Posts?.docs;
+};
+
+export const fetchBlogPost = async (slug: string): Promise<Post> => {
+  const { data } = await fetch(
+    `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: POST,
+        variables: {
+          slug,
+        },
+      }),
+    }
+  ).then((res) => res.json());
+
+  return data?.Posts?.docs[0];
 };

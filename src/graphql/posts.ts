@@ -18,3 +18,19 @@ export const POSTS = `
         }
     }
 `;
+
+export const POST = `
+    query Post($slug: String) {
+        Posts(where: {slug: {equals: $slug}}, limit: 1) {
+            docs {
+                id
+                title 
+                image ${MEDIA_FIELDS}
+                summary
+                createdAt
+                publishedOn
+                
+            }
+        }
+    }
+`;
