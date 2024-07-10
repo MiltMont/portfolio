@@ -12,20 +12,24 @@ const BlogPost: React.FC<Post> = (props) => {
   return (
     <Gutter className={classes.postContainer}>
       <section className={classes.heroContainer}>
-        <div className={[classes.postInfo, "grid"].filter(Boolean).join(" ")}>
+        <div className="grid">
           <div
-            className={[classes.postTitle, "start-1 cols-8 start-m-1 cols-m-8"]
+            className={[classes.postInfo, "start-3 cols-12 start-m-1 cols-8"]
               .filter(Boolean)
               .join(" ")}
           >
-            {title}
-          </div>
-          <div
-            className={[classes.postSummary, "start-13 cols-4 start-m-1 cols-8"]
-              .filter(Boolean)
-              .join(" ")}
-          >
-            <RichTextLexicalRenderer value={summary} />
+            <div className={classes.category}>Category</div>
+            <div className={classes.postTitle}>{title}</div>
+            <div
+              className={[
+                classes.postSummary,
+                "start-13 cols-4 start-m-1 cols-8",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
+              <RichTextLexicalRenderer value={summary} />
+            </div>
           </div>
         </div>
         <div className={classes.imageContainer}>
@@ -46,3 +50,20 @@ const BlogPost: React.FC<Post> = (props) => {
 };
 
 export default BlogPost;
+/* <div className={[classes.postInfo, "grid"].filter(Boolean).join(" ")}>
+          <div
+            className={[classes.postTitle, "start-1 cols-8 start-m-1 cols-m-8"]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            {title}
+          </div>
+          <div
+            className={[classes.postSummary, "start-13 cols-4 start-m-1 cols-8"]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            <RichTextLexicalRenderer value={summary} />
+          </div>
+        </div>
+        */

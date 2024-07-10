@@ -1,19 +1,35 @@
 @use "@scss/common.scss" as *;
 
 .postContainer {
-    padding-top: calc(var(--page-padding-top));
-    margin-top: var(--base);
+    padding-top:var(--page-padding-top);
+
+}
+
+
+.postInfo {
+    padding: 2rem 0;
+    @include mid-break{
+        padding: 1rem 0; 
+    }
+}
+
+.category {
+    @include uppercaseLabel; 
+
 }
 
 .postTitle {
     @include h1; 
     margin: 0; 
+    margin-bottom: var(--base); 
 }
 
 .postSummary {
     @include small; 
     margin: 0; 
+    width: 50%;
     @include mid-break {
+        width: 100%;
         margin-top: var(--base); 
     }
 }

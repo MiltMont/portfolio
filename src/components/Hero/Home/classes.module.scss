@@ -1,11 +1,12 @@
 @use '@scss/common.scss' as *; 
 
 .layout {
-    padding-top: var(--page-padding-top); 
+    
     display: flex;
     background-color: black;
     color: white; 
     @include mid-break {
+        padding-top: var(--page-padding-top); 
         flex-direction: column; 
         gap: var(--base); 
     }
