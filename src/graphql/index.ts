@@ -62,6 +62,7 @@ export const fetchBlogPost = async (slug: string): Promise<Post> => {
           slug,
         },
       }),
+      next: { revalidate: 100 },
     }
   ).then((res) => res.json());
 
