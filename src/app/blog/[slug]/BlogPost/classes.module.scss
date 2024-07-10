@@ -1,0 +1,40 @@
+@use "@scss/common.scss" as *;
+
+.postContainer {
+    padding-top: calc(var(--page-padding-top));
+    margin-top: var(--base);
+}
+
+.postTitle {
+    @include h1; 
+    margin: 0; 
+}
+
+.postSummary {
+    @include small; 
+    margin: 0; 
+    @include mid-break {
+        margin-top: var(--base); 
+    }
+}
+
+.imageContainer {
+    margin-top: calc(var(--base)*2);
+    margin-bottom: calc(var(--base)*2);
+    @include mid-break {
+        margin-top: calc(var(--base));
+        margin-bottom: calc(var(--base));   
+    }
+}
+
+.imageWrapper {
+    text-decoration: none;
+    display: block;
+    position: relative; 
+    aspect-ratio: 16 / 9;
+    
+}
+
+.heroImage {
+    object-fit: cover;
+}
