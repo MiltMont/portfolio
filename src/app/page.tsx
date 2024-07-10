@@ -6,11 +6,12 @@ import { fetchBlogPosts } from "@root/graphql";
 
 export default async function Home() {
   const blogPosts = await fetchBlogPosts();
-  console.log(blogPosts);
+  const latestPost = blogPosts[0] ?? null;
+
   return (
     <>
       <HomeHero />
-      <FeaturedPost />
+      {latestPost && <FeaturedPost {...latestPost} />}
       <CallToAction />
     </>
   );

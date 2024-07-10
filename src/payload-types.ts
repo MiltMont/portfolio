@@ -641,6 +641,7 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: ("draft" | "published") | null;
+  category?: Category;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
