@@ -27,7 +27,8 @@
       "@graphics/*": ["./src/graphics/*"],
       "@utilities/*": ["./src/utilities/*"],
       "@root/*": ["./src/*"],
-      "@providers/*": ["./src/providers/*"]
+      "@providers/*": ["./src/providers/*"],
+      "@blocks/*": ["./src/blocks/*"]
     },
     "strictNullChecks": true
   },

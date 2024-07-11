@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { fetchBlogPost } from "@root/graphql";
 import BlogPost from "./BlogPost";
 
-const Post = async ({ params }) => {
+const Post = async ({ params }: any) => {
   const { slug } = params;
 
   const blogPost = await fetchBlogPost(slug);

@@ -1,3 +1,4 @@
+import { CONTENT } from "./blocks";
 import { MEDIA_FIELDS } from "./media";
 
 export const POSTS = `
@@ -29,7 +30,9 @@ export const POST = `
                 summary
                 createdAt
                 publishedOn
-                
+                content {
+                    ${CONTENT}
+                }
             }
         }
     }
