@@ -10,7 +10,7 @@ import { ContentBlock } from "@root/blocks/Content";
 import { RenderBlocks } from "@components/RenderBlocks";
 
 const BlogPost: React.FC<Post> = (props) => {
-  const { title, image, summary, content } = props;
+  const { title, image, summary, content, publishedOn } = props;
   console.log(content[0]);
   return (
     <>
@@ -24,15 +24,18 @@ const BlogPost: React.FC<Post> = (props) => {
             >
               <div className={classes.category}>Category</div>
               <div className={classes.postTitle}>{title}</div>
-              <div
-                className={[
-                  classes.postSummary,
-                  "start-13 cols-4 start-m-1 cols-8",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <RichTextLexicalRenderer value={summary} />
+              <div className={classes.summaryContainer}>
+                <div className={classes.date}>Published on {publishedOn}</div>
+                <div
+                  className={[
+                    classes.postSummary,
+                    "start-13 cols-4 start-m-1 cols-8",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  <RichTextLexicalRenderer value={summary} />
+                </div>
               </div>
             </div>
           </div>
@@ -41,8 +44,9 @@ const BlogPost: React.FC<Post> = (props) => {
               {typeof image !== "string" && (
                 <Image
                   src={`${process.env.NEXT_PUBLIC_CMS_URL}${image.url}`}
-                  alt={"sphere"}
-                  fill
+                  alt={image.alt}
+                  width={image.width ?? undefined}
+                  height={image.height ?? undefined}
                   className={classes.image}
                 />
               )}

@@ -24,13 +24,33 @@
     margin-bottom: var(--base); 
 }
 
+.summaryContainer {
+    display: flex; 
+    justify-content: end; 
+    align-items: center;
+    @include mid-break {
+        flex-direction: column;
+        justify-self: start; 
+        gap: var(--base); 
+    }
+}
+
+.date {
+    @include label; 
+    color: var(--theme-elevation-700); 
+    width: 50%;
+    margin: 0; 
+    @include mid-break {
+        width: 100%;
+    }
+}
+
 .postSummary {
     @include small; 
     margin: 0; 
     width: 50%;
     @include mid-break {
         width: 100%;
-        margin-top: var(--base); 
     }
 }
 

@@ -3,6 +3,7 @@ import React from "react";
 import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-renderer";
 import { Gutter } from "@components/Gutter";
 import { Page } from "@types";
+import { theme } from "@scss/typographyTheme";
 
 import classes from "./index.module.scss";
 
@@ -17,7 +18,10 @@ const Columns: React.FC<Props> = (props) => {
             .filter(Boolean)
             .join(" ")}
         >
-          <RichTextLexicalRenderer value={props.contentFields.columnOne} />
+          <RichTextLexicalRenderer
+            value={props.contentFields.columnOne}
+            theme={theme}
+          />
         </div>
       );
     }
