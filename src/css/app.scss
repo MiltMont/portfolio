@@ -44,6 +44,8 @@
 
   --trans-default: 150ms;
 
+  
+
   @include extra-large-break {
     --font-body-size: 16px;
     --gutter-h: 8rem;
@@ -99,7 +101,40 @@
     2.4px 14.1px 13px -2.8px hsl(var(--shadow-color) / 0.21),
     3.8px 22.8px 21px -3.4px hsl(var(--shadow-color) / 0.17),
     5.9px 34.9px 32.1px -3.9px hsl(var(--shadow-color) / 0.14);
-}
+
+    // Overriding Webiny styles
+    .WebinyLexical__h1 {
+      @include h1; 
+    }
+
+    .WebinyLexical__h2 {
+      @include h2; 
+    }
+
+    .WebinyLexical__h3 {
+      @include h3; 
+    }
+
+    .WebinyLexical__h4 {
+      @include h4; 
+    }
+    .WebinyLexical__h5 {
+      @include h5; 
+    }
+
+    .WebinyLexical__h6 {
+      @include h6; 
+    }
+
+    .WebinyLexical__paragraph {
+      @include body; 
+      margin-bottom: var(--base); 
+    } 
+
+    .WebinyLexical__link {
+      
+    }
+  }
 
 // Global styles
 
