@@ -38,7 +38,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
 
         switch (node.type) {
           case "root":
-            return <div>Root element</div>;
+            return <div key={i}>Root element</div>;
 
           case "heading":
             switch (node.tag) {
@@ -69,7 +69,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
             }
           case "paragraph":
             return (
-              <p>
+              <p key={i}>
                 <Serialize content={node.children} />{" "}
               </p>
             );
