@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fetchBlogPost } from "@root/graphql";
-import BlogPost from "./BlogPost";
+import BlogPost from "@layout/BlogPost";
 
 const Post = async ({ params }: any) => {
   const { slug } = params;

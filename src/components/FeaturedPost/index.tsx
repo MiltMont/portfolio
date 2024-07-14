@@ -37,9 +37,7 @@ export const FeaturedPost: React.FC<Post> = (props) => {
         >
           {category && <div className={classes.tag}>{category.title}</div>}
           <div className={classes.title}>{title}</div>
-          <div className={classes.summary}>
-            <RichTextLexicalRenderer value={summary} />
-          </div>
+          <div className={classes.summary}>Summary</div>
         </div>
       </Gutter>
     </section>

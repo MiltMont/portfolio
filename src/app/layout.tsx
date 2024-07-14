@@ -31,9 +31,9 @@ export default async function RootLayout({
     <html lang="en">
       <body className={[robotoMono.variable, inter.variable].join(" ")}>
         <Providers>
-          <Header {...mainMenu} />
+          {mainMenu && <Header {...mainMenu} />}
           {children}
-          <Footer {...footer} />
+          {footer && <Footer {...footer} />}
         </Providers>
       </body>
     </html>

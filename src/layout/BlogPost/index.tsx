@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { Post } from "@types";
-import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-renderer";
 import { Gutter } from "@components/Gutter";
 
 import classes from "./classes.module.scss";
@@ -33,9 +32,7 @@ const BlogPost: React.FC<Post> = (props) => {
                   ]
                     .filter(Boolean)
                     .join(" ")}
-                >
-                  <RichTextLexicalRenderer value={summary} />
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -54,8 +51,6 @@ const BlogPost: React.FC<Post> = (props) => {
           </div>
         </section>
       </Gutter>
-      {/* @ts-ignore */}
-      <RenderBlocks blocks={[...(content || [])]} disableGutter disableGrid />
     </>
   );
 };
