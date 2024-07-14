@@ -16,7 +16,7 @@ export const fetchGlobals = async (): Promise<{
       body: JSON.stringify({
         query: GLOBALS,
       }),
-      next: { revalidate: 1000 },
+      next: { revalidate: 100 },
     }
   ).then((res) => res.json());
 
@@ -41,7 +41,7 @@ export const fetchBlogPosts = async (): Promise<Post[]> => {
           publishedOn: currentDate,
         },
       }),
-      next: { revalidate: 1000 },
+      next: { revalidate: 100 },
     }
   ).then((res) => res.json());
 
@@ -62,7 +62,7 @@ export const fetchBlogPost = async (slug: string): Promise<Post> => {
           slug,
         },
       }),
-      next: { revalidate: 1000 },
+      next: { revalidate: 100 },
     }
   ).then((res) => res.json());
 
