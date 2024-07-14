@@ -7,10 +7,11 @@ import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-rendere
 
 import classes from "./classes.module.scss";
 import type { Post, Media } from "@types";
+import { RichText } from "@components/Serialize";
 
 export const FeaturedPost: React.FC<Post> = (props) => {
   const { title, createdAt, summary, category, slug, image } = props;
-
+  console.log(summary);
   return (
     <section className={classes.featuredPostContainer}>
       <div className={classes.media}>
@@ -37,7 +38,9 @@ export const FeaturedPost: React.FC<Post> = (props) => {
         >
           {category && <div className={classes.tag}>{category.title}</div>}
           <div className={classes.title}>{title}</div>
-          <div className={classes.summary}>Summary</div>
+          <div className={classes.summary}>
+            <RichText {...summary.root} />
+          </div>
         </div>
       </Gutter>
     </section>

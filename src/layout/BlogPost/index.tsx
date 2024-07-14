@@ -3,8 +3,10 @@ import React from "react";
 import Image from "next/image";
 import { Post } from "@types";
 import { Gutter } from "@components/Gutter";
+import { RichText } from "@components/Serialize";
 
 import classes from "./classes.module.scss";
+import { RenderBlocks } from "@components/RenderBlocks";
 
 const BlogPost: React.FC<Post> = (props) => {
   const { title, image, summary, content, publishedOn, category } = props;
@@ -30,7 +32,9 @@ const BlogPost: React.FC<Post> = (props) => {
                   ]
                     .filter(Boolean)
                     .join(" ")}
-                ></div>
+                >
+                  <RichText {...summary.root} />
+                </div>
               </div>
             </div>
           </div>
@@ -50,6 +54,8 @@ const BlogPost: React.FC<Post> = (props) => {
           </div>
         </section>
       </Gutter>
+      {/* @ts-ignore */}
+      <RenderBlocks blocks={[...(content || [])]} />
     </>
   );
 };
