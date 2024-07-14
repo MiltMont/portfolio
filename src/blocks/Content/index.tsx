@@ -10,15 +10,13 @@ type Props = Extract<Page["layout"][0], { blockType: "content" }>;
 const Columns: React.FC<Props> = (props) => {
   switch (props.contentFields?.layout) {
     case "centered": {
-      console.log(props.contentFields.columnOne);
       return (
         <div
           className={["start-5 cols-8 start-m-1", classes.centered]
             .filter(Boolean)
             .join(" ")}
         >
-          {/* @ts-ignore */}
-          <RichText {...props.contentFields.columnOne.root} />
+          <RichText content={props.contentFields.columnOne} />
         </div>
       );
     }

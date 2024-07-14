@@ -33,7 +33,7 @@ const BlogPost: React.FC<Post> = (props) => {
                     .filter(Boolean)
                     .join(" ")}
                 >
-                  <RichText {...summary.root} />
+                  <RichText content={summary} />
                 </div>
               </div>
             </div>
