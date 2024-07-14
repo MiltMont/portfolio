@@ -7,6 +7,7 @@ import { RichText } from "@components/Serialize";
 
 import classes from "./classes.module.scss";
 import { RenderBlocks } from "@components/RenderBlocks";
+import { formatDate } from "@utilities/format-date-time";
 
 const BlogPost: React.FC<Post> = (props) => {
   const { title, image, summary, content, publishedOn, category } = props;
@@ -26,7 +27,9 @@ const BlogPost: React.FC<Post> = (props) => {
               )}
               <div className={classes.postTitle}>{title}</div>
               <div className={classes.summaryContainer}>
-                <div className={classes.date}>Published on {publishedOn}</div>
+                <div className={classes.date}>
+                  Published on {formatDate({ date: publishedOn })}
+                </div>
                 <div
                   className={[
                     classes.postSummary,

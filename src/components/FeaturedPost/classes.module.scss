@@ -45,8 +45,12 @@
 }
 
 .summary {
-    @include small; 
+    @include body; 
     text-align: center;
+}
+
+.date {
+    @include small; 
 }
 
 .mediaWrapper {

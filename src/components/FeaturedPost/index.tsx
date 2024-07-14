@@ -8,9 +8,10 @@ import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-rendere
 import classes from "./classes.module.scss";
 import type { Post, Media } from "@types";
 import { RichText } from "@components/Serialize";
+import { formatDate } from "@utilities/format-date-time";
 
 export const FeaturedPost: React.FC<Post> = (props) => {
-  const { title, createdAt, summary, category, slug, image } = props;
+  const { title, publishedOn, summary, category, slug, image } = props;
 
   return (
     <section className={classes.featuredPostContainer}>
@@ -40,9 +41,12 @@ export const FeaturedPost: React.FC<Post> = (props) => {
             <div className={classes.tag}>{category.name}</div>
           )}
           <div className={classes.title}>{title}</div>
-          <div className={classes.summary}>
-            <RichText content={summary} />
+          <div className={classes.date}>
+            {" "}
+            {formatDate({ date: publishedOn })}
           </div>
+
+          <RichText className={classes.summary} content={summary} />
         </div>
       </Gutter>
     </section>
