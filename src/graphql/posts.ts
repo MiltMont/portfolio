@@ -13,7 +13,7 @@ export const POSTS = `
                 slug
                 image ${MEDIA_FIELDS}
                 category {
-                    title
+                    title               
                 }
             }
         }
@@ -32,6 +32,10 @@ export const POST = `
                 publishedOn
                 content {
                     ${CONTENT}
+                }
+                
+                category {
+                    title
                 }
             }
         }

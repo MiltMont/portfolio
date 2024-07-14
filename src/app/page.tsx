@@ -7,7 +7,7 @@ import { fetchBlogPosts } from "@root/graphql";
 export default async function Home() {
   const blogPosts = await fetchBlogPosts();
   const latestPost = blogPosts[0] ?? null;
-
+  console.log(latestPost);
   return (
     <>
       <HomeHero />

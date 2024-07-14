@@ -10,8 +10,8 @@ import { ContentBlock } from "@root/blocks/Content";
 import { RenderBlocks } from "@components/RenderBlocks";
 
 const BlogPost: React.FC<Post> = (props) => {
-  const { title, image, summary, content, publishedOn } = props;
-  console.log(content[0]);
+  const { title, image, summary, content, publishedOn, category } = props;
+
   return (
     <>
       <Gutter className={classes.postContainer}>
