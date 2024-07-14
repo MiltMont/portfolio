@@ -21,7 +21,9 @@ const BlogPost: React.FC<Post> = (props) => {
                 .filter(Boolean)
                 .join(" ")}
             >
-              <div className={classes.category}>Category</div>
+              {typeof category !== "string" && (
+                <div className={classes.tag}>{category.name}</div>
+              )}
               <div className={classes.postTitle}>{title}</div>
               <div className={classes.summaryContainer}>
                 <div className={classes.date}>Published on {publishedOn}</div>
