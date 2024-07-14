@@ -36,7 +36,9 @@ export const FeaturedPost: React.FC<Post> = (props) => {
             .filter(Boolean)
             .join(" ")}
         >
-          {category && <div className={classes.tag}>{category.title}</div>}
+          {typeof category !== "string" && (
+            <div className={classes.tag}>{category.name}</div>
+          )}
           <div className={classes.title}>{title}</div>
           <div className={classes.summary}>
             <RichText content={summary} />

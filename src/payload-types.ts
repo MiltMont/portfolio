@@ -340,6 +340,7 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  category: string | Category;
   content: (
     | {
         mediaBlockFields: {
@@ -641,7 +642,6 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: ("draft" | "published") | null;
-  category?: Category;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -649,7 +649,7 @@ export interface Post {
  */
 export interface Category {
   id: string;
-  title: string;
+  name: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -887,4 +887,8 @@ export interface Footer {
     | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+
+declare module "payload" {
+  export interface GeneratedTypes extends Config {}
 }

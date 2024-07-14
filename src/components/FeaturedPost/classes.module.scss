@@ -31,7 +31,7 @@
 }
 
 .tag {
-    @include label; 
+    @include uppercaseLabel; 
     margin: 0; 
     
     margin-bottom: calc(var(--base));
