@@ -4,6 +4,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 hostname: "localhost"
+            }, 
+            {
+                hostname: "portfolio-cms-zmpgeoiema-uc.a.run.app"
             }
         ]
     }
