@@ -5,8 +5,6 @@ import { Post } from "@types";
 import { Gutter } from "@components/Gutter";
 
 import classes from "./classes.module.scss";
-import { ContentBlock } from "@root/blocks/Content";
-import { RenderBlocks } from "@components/RenderBlocks";
 
 const BlogPost: React.FC<Post> = (props) => {
   const { title, image, summary, content, publishedOn, category } = props;
@@ -48,6 +46,7 @@ const BlogPost: React.FC<Post> = (props) => {
                 />
               )}
             </div>
+            <figcaption className={classes.caption}>Caption</figcaption>
           </div>
         </section>
       </Gutter>

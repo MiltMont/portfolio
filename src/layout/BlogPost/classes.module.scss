@@ -55,22 +55,18 @@
 }
 
 .imageContainer {
-    margin-top: calc(var(--base)*2);
-    margin-bottom: calc(var(--base)*2);
-    @include mid-break {
-        margin-top: calc(var(--base));
-        margin-bottom: calc(var(--base));   
-    }
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .imageWrapper {
-    text-decoration: none;
-    display: block;
-    position: relative; 
-    aspect-ratio: 16 / 9;
-    
+    background-color: red; 
 }
 
-.heroImage {
-    object-fit: cover;
+.caption {
+    @include small; 
+    margin-top: calc(var(--base)/2); 
+    color: var(--theme-elevation-800); 
 }
+
