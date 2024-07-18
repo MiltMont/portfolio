@@ -6,6 +6,7 @@ type Node = {
   type: string;
   tag?: string;
   text?: string;
+  listType?: string;
 };
 
 type SerializeFunction = React.FC<{
@@ -86,6 +87,28 @@ export const Serialize: SerializeFunction = ({ content }) => {
                 <Serialize content={node.children} />
               </div>
             );
+          case "listitem":
+            return (
+              <li key={i}>
+                {" "}
+                <Serialize content={node.children} />{" "}
+              </li>
+            );
+          case "list":
+            if (node.listType == "number") {
+              return (
+                <ol key={i}>
+                  <Serialize content={node.children} />
+                </ol>
+              );
+            }
+            if (node.listType == "bullet") {
+              return (
+                <ul key={i}>
+                  <Serialize content={node.children} />
+                </ul>
+              );
+            }
         }
       })}
     </>
