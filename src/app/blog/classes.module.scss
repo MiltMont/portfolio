@@ -1,0 +1,8 @@
+@use '@scss/common' as *;
+
+.container {
+    margin-bottom: 2rem;
+    @include mid-break {
+        margin-bottom: 1rem;
+    }
+}
