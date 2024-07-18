@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { Gutter } from "@components/Gutter";
 import Link from "next/link";
-import { RichTextLexicalRenderer } from "@webiny/react-rich-text-lexical-renderer";
 
 import classes from "./classes.module.scss";
 import type { Post, Media } from "@types";
