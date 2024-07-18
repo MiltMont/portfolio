@@ -1,0 +1,8 @@
+@use "@scss/common.scss" as *;
+
+.container {
+    padding: 1rem;
+    overflow-x:scroll;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 8px;
+}
