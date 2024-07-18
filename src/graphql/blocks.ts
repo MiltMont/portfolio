@@ -39,6 +39,7 @@ export const MEDIA_BLOCK = `
         settings ${SETTINGS}
         position
         media ${MEDIA_FIELDS}
+        caption
     }
 }
 `;
