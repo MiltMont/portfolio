@@ -1,3 +1,5 @@
+import { MEDIA_FIELDS } from "./media";
+
 const SETTINGS = `{
     theme
 }
@@ -26,6 +28,17 @@ export const CALLOUT = `
         enableCalloutHeading
         calloutHeading
         calloutBody   
+    }
+}
+`;
+
+export const MEDIA_BLOCK = `
+...on MediaBlock {
+    blockType
+    mediaBlockFields {
+        settings ${SETTINGS}
+        position
+        media ${MEDIA_FIELDS}
     }
 }
 `;
