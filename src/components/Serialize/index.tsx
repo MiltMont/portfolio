@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import classes from "./classes.module.scss";
 import { Media } from "@types";
 import Image from "next/image";
+import KatexSpan from "@components/KatexSpan";
 
 type Node = {
   children?: Node[];
@@ -10,6 +12,7 @@ type Node = {
   text?: string;
   listType?: string;
   value?: Media;
+  format?: number;
 };
 
 type SerializeFunction = React.FC<{
@@ -43,7 +46,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
 
         switch (node.type) {
           case "text":
-            return node.text;
+            return <KatexSpan text={node.text} key={i} />;
           case "root":
             return <div key={i}>Root element</div>;
 
