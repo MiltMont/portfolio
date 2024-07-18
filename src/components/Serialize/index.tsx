@@ -4,6 +4,7 @@ import classes from "./classes.module.scss";
 import { Media } from "@types";
 import Image from "next/image";
 import KatexSpan from "@components/KatexSpan";
+import EquationBlock from "@root/blocks/Equation";
 
 type Node = {
   children?: Node[];
@@ -13,6 +14,12 @@ type Node = {
   listType?: string;
   value?: Media;
   format?: number;
+  fields?: {
+    blockType?: string;
+    equationFields?: {
+      richText?: string;
+    };
+  };
 };
 
 type SerializeFunction = React.FC<{
@@ -47,9 +54,13 @@ export const Serialize: SerializeFunction = ({ content }) => {
         switch (node.type) {
           case "text":
             return <KatexSpan text={node.text} key={i} />;
-          case "root":
-            return <div key={i}>Root element</div>;
 
+          case "block":
+            if (node.fields?.blockType === "equation") {
+              return (
+                <EquationBlock content={node.fields.equationFields?.richText} />
+              );
+            }
           case "heading":
             switch (node.tag) {
               case "h1":
