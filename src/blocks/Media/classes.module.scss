@@ -1,0 +1,27 @@
+@use "@scss/common.scss" as *;
+
+.caption {
+    margin: 0;
+    >p {
+        @include label;
+        margin: var(--base) 0;
+        color: var(--theme-elevation-800);
+    }
+}
+
+
+.defaultMedia {
+    width: 100%;
+    object-fit: cover;
+}
+
+.wideMedia {
+    width: 100%;
+    object-fit: cover;
+}
+
+// Remove this and implement margins @RenderBlocks
+.defaultMediaContainer, .wideMediaContainer {
+    margin: 2rem 0;
+}
+
