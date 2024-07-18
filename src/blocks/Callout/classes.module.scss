@@ -1,0 +1,21 @@
+@use "@scss/common.scss" as *;
+
+.heading {
+    background-color: var(--theme-elevation-100);
+    padding: 1rem 1rem;
+    margin: 0;
+}
+
+.title {
+    > p {
+        margin: 0;
+    }
+}
+
+.body {
+    padding: 0 1rem;
+}
+
+.container {
+    border: 1px solid var(--theme-border-color);
+}
