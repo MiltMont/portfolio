@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./classes.module.scss";
+import { Media } from "@types";
+import Image from "next/image";
 
 type Node = {
   children?: Node[];
@@ -7,6 +9,7 @@ type Node = {
   tag?: string;
   text?: string;
   listType?: string;
+  value?: Media;
 };
 
 type SerializeFunction = React.FC<{
@@ -109,6 +112,20 @@ export const Serialize: SerializeFunction = ({ content }) => {
                 </ul>
               );
             }
+          case "upload":
+            return (
+              <>
+                {node.value?.url && typeof node.value !== "string" && (
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_CMS_URL}${node.value.url}`}
+                    alt={node.value.alt}
+                    width={node.value?.width ?? undefined}
+                    height={node.value?.height ?? undefined}
+                    className={classes.image}
+                  />
+                )}
+              </>
+            );
         }
       })}
     </>
