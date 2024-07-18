@@ -22,21 +22,19 @@ export const RenderBlocks: React.FC<Props> = (props) => {
 
   if (hasBlocks) {
     return (
-      <>
-        <div id={customId ?? undefined}>
-          {blocks.map((block, index) => {
-            const { blockName, blockType } = block;
+      <div id={customId ?? undefined}>
+        {blocks.map((block, index) => {
+          const { blockName, blockType } = block;
 
-            if (blockType && blockType in blockComponents) {
-              const Block = blockComponents[blockType];
+          if (blockType && blockType in blockComponents) {
+            const Block = blockComponents[blockType];
 
-              if (Block) {
-                return <Block key={index} id={blockName} {...block} />;
-              }
+            if (Block) {
+              return <Block key={index} id={blockName} {...block} />;
             }
-          })}
-        </div>
-      </>
+          }
+        })}
+      </div>
     );
   }
 };

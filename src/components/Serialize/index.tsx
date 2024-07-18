@@ -114,7 +114,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
             }
           case "upload":
             return (
-              <>
+              <div key={i}>
                 {node.value?.url && typeof node.value !== "string" && (
                   <Image
                     key={i}
@@ -125,7 +125,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
                     className={classes.image}
                   />
                 )}
-              </>
+              </div>
             );
         }
       })}
