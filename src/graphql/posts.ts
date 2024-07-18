@@ -1,4 +1,4 @@
-import { CONTENT, CALLOUT } from "./blocks";
+import { CONTENT, CALLOUT, MEDIA_BLOCK } from "./blocks";
 import { MEDIA_FIELDS } from "./media";
 
 export const POSTS = `
@@ -36,6 +36,7 @@ export const POST = `
                 content {
                     ${CONTENT}
                     ${CALLOUT}
+                    ${MEDIA_BLOCK}
                 }
             }
         }
