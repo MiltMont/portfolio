@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import { ContentBlock } from "@blocks/Content";
-import { CalloutBlock } from "@root/blocks/Callout";
+import { CalloutBlock } from "@blocks/Callout";
 import { Page } from "@types";
+import MediaBlock from "@blocks/Media";
 
 const blockComponents = {
   content: ContentBlock,
   callout: CalloutBlock,
+  mediaBlock: MediaBlock,
 };
 
 export type BlocksProp = Page["layout"][0];
