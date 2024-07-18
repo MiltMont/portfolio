@@ -117,6 +117,7 @@ export const Serialize: SerializeFunction = ({ content }) => {
               <>
                 {node.value?.url && typeof node.value !== "string" && (
                   <Image
+                    key={i}
                     src={`${process.env.NEXT_PUBLIC_CMS_URL}${node.value.url}`}
                     alt={node.value.alt}
                     width={node.value?.width ?? undefined}
