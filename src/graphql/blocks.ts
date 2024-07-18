@@ -17,3 +17,15 @@ export const CONTENT = `
     }
 }
 `;
+
+export const CALLOUT = `
+...on Callout {
+    blockType
+    calloutFields {
+        settings ${SETTINGS}
+        enableCalloutHeading
+        calloutHeading
+        calloutBody   
+    }
+}
+`;
