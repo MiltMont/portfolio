@@ -1,0 +1,14 @@
+@use "@scss/common.scss" as *;
+
+.horizontalRule {
+    height: 1px;
+    border-top: 2px var(--theme-elevation-300) solid;
+}
+
+.quote {
+    background-color: var(--theme-elevation-100);
+    padding: 1rem 1rem;
+    color: var(--theme-elevation-850);
+
+    border-left: solid .5rem var(--theme-elevation-400);
+}

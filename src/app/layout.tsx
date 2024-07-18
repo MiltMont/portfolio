@@ -17,7 +17,7 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "MM | Porfolio",
-  description: "Something Something",
+  description: "My personal portfolio.",
 };
 
 export default async function RootLayout({

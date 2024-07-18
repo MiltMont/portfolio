@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./classes.module.scss";
 
 type Node = {
   children?: Node[];
@@ -37,6 +38,8 @@ export const Serialize: SerializeFunction = ({ content }) => {
         }
 
         switch (node.type) {
+          case "text":
+            return node.text;
           case "root":
             return <div key={i}>Root element</div>;
 
@@ -70,12 +73,19 @@ export const Serialize: SerializeFunction = ({ content }) => {
           case "paragraph":
             return (
               <p key={i}>
-                <Serialize content={node.children} />{" "}
+                <Serialize content={node.children} />
               </p>
             );
 
-          case "text":
-            return node.text;
+          case "horizontalrule":
+            return <hr key={i} className={classes.horizontalRule} />;
+
+          case "quote":
+            return (
+              <div key={i} className={classes.quote}>
+                <Serialize content={node.children} />
+              </div>
+            );
         }
       })}
     </>
