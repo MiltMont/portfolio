@@ -6,6 +6,9 @@ import { Footer } from "@layout/Footer";
 import { Header } from "@layout/Header";
 import { fetchGlobals } from "@root/graphql";
 
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import "../css/app.scss";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
@@ -35,6 +38,8 @@ export default async function RootLayout({
           {children}
           {footer && <Footer {...footer} />}
         </Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
