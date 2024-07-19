@@ -4,7 +4,8 @@
     margin: 0;
     >p {
         @include label;
-        margin: var(--base) 0;
+        margin: 0;
+        margin-top: var(--base);
         color: var(--theme-elevation-800);
     }
 }
@@ -23,5 +24,8 @@
 // Remove this and implement margins @RenderBlocks
 .defaultMediaContainer, .wideMediaContainer {
     margin: 2rem 0;
+    @include mid-break {
+        margin: 0;
+    }
 }
 
