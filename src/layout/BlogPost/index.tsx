@@ -43,21 +43,18 @@ const BlogPost: React.FC<Post> = (props) => {
               </div>
             </div>
           </div>
-          <div className={classes.imageContainer}>
-            <div className={classes.imageWrapper}>
-              {typeof image !== "string" && (
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_CMS_URL}${image.url}`}
-                  alt={image.alt}
-                  width={image.width ?? undefined}
-                  height={image.height ?? undefined}
-                  className={classes.image}
-                />
-              )}
-            </div>
-            <figcaption className={classes.caption}>Caption</figcaption>
-          </div>
         </section>
+      </Gutter>
+      <Gutter className={classes.postImage}>
+        {typeof image !== "string" && (
+          <Image
+            src={`${process.env.NEXT_PUBLIC_CMS_URL}${image.url}`}
+            alt={image.alt}
+            width={image.width ?? undefined}
+            height={image.height ?? undefined}
+            className={classes.image}
+          />
+        )}
       </Gutter>
       {/* @ts-ignore */}
       <RenderBlocks blocks={[...(content || [])]} />
