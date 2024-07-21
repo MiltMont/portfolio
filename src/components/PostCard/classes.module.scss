@@ -5,6 +5,7 @@
     @include small;
     width: 50%;
 }
+
 .cardContainer {
     display: flex;
     height: 100%;
@@ -21,6 +22,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include mid-break{
+        gap: var(--base)
+    }
 }
 
 .image {
