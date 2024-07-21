@@ -1,6 +1,7 @@
 import MinimalHero from "@components/Hero/Minimal";
 import DisplayPosts from "@layout/DisplayPosts";
 import { fetchBlogPosts } from "@root/graphql";
+import { Metadata } from "next";
 
 import classes from "./classes.module.scss";
 
@@ -17,6 +18,11 @@ const Blog = async () => {
       <DisplayPosts posts={blogPosts} />
     </div>
   );
+};
+
+export const metadata: Metadata = {
+  title: "MM | Blog",
+  description: "I encourage you to check my posts!",
 };
 
 export default Blog;

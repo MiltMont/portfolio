@@ -18,11 +18,6 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "MM | Porfolio",
-  description: "My personal portfolio.",
-};
-
 export default async function RootLayout({
   children,
 }: Readonly<{

@@ -1,4 +1,4 @@
-import { DefaultHero } from "@components/Hero/Default";
+import { Metadata } from "next";
 import { HomeHero } from "@components/Hero/Home";
 import { FeaturedPost } from "@components/FeaturedPost";
 import { CallToAction } from "@components/CallToAction";
@@ -16,3 +16,8 @@ export default async function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: "MM | Home",
+  description: "Welcome to my portfolio.",
+};
