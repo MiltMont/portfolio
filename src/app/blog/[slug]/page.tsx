@@ -4,8 +4,14 @@ import { notFound } from "next/navigation";
 import { fetchBlogPost } from "@root/graphql";
 import BlogPost from "@layout/BlogPost";
 
-const Post = async ({ params }: any) => {
-  const { slug } = params;
+type Props = {
+  params: { slug: string };
+};
+
+const Post = async (props) => {
+  const {
+    params: { slug },
+  } = props;
 
   const blogPost = await fetchBlogPost(slug);
 
@@ -13,5 +19,13 @@ const Post = async ({ params }: any) => {
 
   return <BlogPost {...blogPost} />;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const blogPost = await fetchBlogPost(params.slug);
+
+  return {
+    title: `MM | ${blogPost.title}`,
+  };
+}
 
 export default Post;
