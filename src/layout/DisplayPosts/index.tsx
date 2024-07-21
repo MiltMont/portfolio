@@ -12,7 +12,7 @@ type Props = {
 
 const DisplayPosts: React.FC<Props> = (props) => {
   const { posts } = props;
-  console.log(posts);
+
   // Handle case for 0 and 1 post!
   if (posts.length == 0) {
     return null;

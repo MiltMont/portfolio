@@ -16,7 +16,6 @@ export default function KatexSpan({text, ...delegated}) {
         }
 
     }, [text]); 
-    console.log(katexTextRef.current)
     return (
         <span ref={katexTextRef} {...delegated}>{text}</span>
     )
