@@ -15,7 +15,6 @@ export const Footer: React.FC<FooterType> = (props) => {
     <Gutter className={classes.footerContainer}>
       <footer
         className={[classes.footerWrapper, "grid"].filter(Boolean).join(" ")}
-        data-theme="dark"
       >
         <div
           className={[classes.logoLg, "start-1 cols-8"]
