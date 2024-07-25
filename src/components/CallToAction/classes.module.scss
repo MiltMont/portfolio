@@ -3,20 +3,57 @@
 
 
 .ctaContainer {
-    background-color: var(--theme-bg);
-    padding: var(--base) 0;
+    display: flex;
+    margin: 4rem 0;
+    align-items: center;
+    @include mid-break {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
 }
 
 .content {
-    @include h3;
+    width: 50%;
+    @include h2;
+    margin: 0;
+    @include mid-break {
+        width: 100%;
+    }
 }
 
-.actions {
-    @include h1;
-    margin: 0;
-    border: 1px solid; 
-    border-color: var(--theme-border-color);
+.links {
+    width: 50%;
     display: flex;
-    justify-content: center;
+    border: 1px solid var(--theme-border-color);
+    @include mid-break {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.link {
+    @include h5;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease, transform 0.3s ease; // Add transition for transform
+
+    @include mid-break {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    &:hover {
+        background-color: var(--theme-elevation-1000);
+        color: var(--theme-bg);
+        opacity: 1;
+    }
 }
