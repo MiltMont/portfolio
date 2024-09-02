@@ -14,3 +14,28 @@ export const PAGES = `
         }
     }
 `;
+
+export const PAGE = `
+    query Page($slug: String) {
+        Pages(where: {slug: {equals: $slug}}, limit: 1) {
+            docs {
+                id 
+                title 
+                slug 
+                createdAt
+                updatedAt
+                hero {
+                    type
+                    richText
+                    description
+                    media ${MEDIA_FIELDS}
+                }
+                layout {
+                    ${CONTENT}
+                    ${MEDIA_BLOCK}
+                }    
+            }
+
+        }
+    }
+`;

@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import { HomeHero } from "@components/Hero/Home";
 import { FeaturedPost } from "@components/FeaturedPost";
 import { CallToAction } from "@components/CallToAction";
-import { fetchBlogPosts, fetchPages } from "@root/graphql";
+import { fetchBlogPosts, fetchPage, fetchPages } from "@root/graphql";
 
 export default async function Home() {
   const blogPosts = await fetchBlogPosts();
   const latestPost = blogPosts[0] ?? null;
-  const pages = await fetchPages();
+  const pages = await fetchPage("home");
 
   console.log(pages);
   return (

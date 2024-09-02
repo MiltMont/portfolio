@@ -1,7 +1,7 @@
 import type { MainMenu, Footer, Post, Page } from "@types";
 import { GLOBALS } from "./globals";
 import { POST, POSTS } from "./posts";
-import { PAGES } from "./pages";
+import { PAGE, PAGES } from "./pages";
 
 export const fetchPages = async (): Promise<Page[]> => {
   const { data } = await fetch(
@@ -19,6 +19,27 @@ export const fetchPages = async (): Promise<Page[]> => {
   ).then((res) => res.json());
 
   return data?.Pages?.docs;
+};
+
+export const fetchPage = async (slug: String): Promise<Page> => {
+  const { data } = await fetch(
+    `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: PAGE,
+        variables: {
+          slug,
+        },
+      }),
+      next: { revalidate: 100 },
+    }
+  ).then((res) => res.json());
+
+  return data?.Pages?.docs[0];
 };
 
 export const fetchGlobals = async (): Promise<{
