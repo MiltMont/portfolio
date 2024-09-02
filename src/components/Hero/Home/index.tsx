@@ -1,22 +1,36 @@
 import React from "react";
 import Image from "next/image";
 import classes from "./classes.module.scss";
+import { Media } from "@types";
+import { RichText } from "@components/Serialize";
 
-export const HomeHero: React.FC<any> = ({}) => {
+type Props = {
+  richText: any;
+  description: any;
+  media: Media;
+};
+
+export const HomeHero: React.FC<Props> = ({ richText, description, media }) => {
+  console.log(
+    `${process.env.NEXT_PUBLIC_CMS_URL}/media/${encodeURI(media.url as string)}`
+  );
+  console.log(media.url);
   return (
     <div className={classes.layout}>
       <div className={classes.content}>
         <div className={classes.heading}>
-          Im Milton, a software developer, mathematician and AI Enthusiast.
+          <RichText content={richText} />
         </div>
         <div className={classes.legend}>
-          You can find updates on my latest activity in this site.
+          <RichText content={description} />
         </div>
       </div>
       <div className={classes.media}>
         <div className={classes.mediaWrapper}>
           <Image
-            src={"/triangulation.png"}
+            src={`${process.env.NEXT_PUBLIC_CMS_URL}${encodeURI(
+              media.url as string
+            )}`}
             alt={"triangulation"}
             className={classes.image}
             fill

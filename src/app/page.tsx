@@ -2,17 +2,21 @@ import { Metadata } from "next";
 import { HomeHero } from "@components/Hero/Home";
 import { FeaturedPost } from "@components/FeaturedPost";
 import { CallToAction } from "@components/CallToAction";
-import { fetchBlogPosts, fetchPage, fetchPages } from "@root/graphql";
+import { fetchBlogPosts, fetchPage } from "@root/graphql";
+import { Media } from "@types";
 
 export default async function Home() {
   const blogPosts = await fetchBlogPosts();
   const latestPost = blogPosts[0] ?? null;
-  const pages = await fetchPage("home");
+  const home = await fetchPage("home");
 
-  console.log(pages);
   return (
     <>
-      <HomeHero />
+      <HomeHero
+        richText={home.hero.richText}
+        description={home.hero.description}
+        media={home.hero.media as Media}
+      />
       {latestPost && <FeaturedPost {...latestPost} />}
       <CallToAction />
     </>
