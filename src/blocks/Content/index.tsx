@@ -20,6 +20,21 @@ const Columns: React.FC<Props> = (props) => {
         </div>
       );
     }
+    case "twoColumns": {
+      return (
+        <>
+          <RichText
+            content={props.contentFields.columnOne}
+            className="cols-8"
+          />
+
+          <RichText
+            content={props.contentFields.columnTwo}
+            className="cols-8"
+          />
+        </>
+      );
+    }
     default: {
       return null;
     }
