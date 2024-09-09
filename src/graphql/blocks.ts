@@ -43,3 +43,22 @@ export const MEDIA_BLOCK = `
     }
 }
 `;
+
+export const FEATURED_POST = `
+...on FeaturedPost {
+    blockType
+    featuredPostFields {
+        featuredPost {
+          id 
+          title  
+          image ${MEDIA_FIELDS}
+          summary
+          slug
+          publishedOn
+          category {
+          name
+          }
+        }
+    }
+}
+`;

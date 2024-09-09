@@ -4,11 +4,13 @@ import { ContentBlock } from "@blocks/Content";
 import { CalloutBlock } from "@blocks/Callout";
 import { Page } from "@types";
 import MediaBlock from "@blocks/Media";
+import { FeaturedPost } from "@components/FeaturedPost";
 
 const blockComponents = {
   content: ContentBlock,
   callout: CalloutBlock,
   mediaBlock: MediaBlock,
+  featuredPost: FeaturedPost,
 };
 
 export type BlocksProp = Page["layout"][0];

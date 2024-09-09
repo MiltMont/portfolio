@@ -11,10 +11,6 @@ type Props = {
 };
 
 export const HomeHero: React.FC<Props> = ({ richText, description, media }) => {
-  console.log(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/media/${encodeURI(media.url as string)}`
-  );
-  console.log(media.url);
   return (
     <div className={classes.layout}>
       <div className={classes.content}>

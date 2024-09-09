@@ -1,4 +1,4 @@
-import { CONTENT, MEDIA_BLOCK } from "./blocks";
+import { CONTENT, FEATURED_POST, MEDIA_BLOCK } from "./blocks";
 import { MEDIA_FIELDS } from "./media";
 
 export const PAGES = `
@@ -33,6 +33,7 @@ export const PAGE = `
                 layout {
                     ${CONTENT}
                     ${MEDIA_BLOCK}
+                    ${FEATURED_POST}
                 }    
             }
 

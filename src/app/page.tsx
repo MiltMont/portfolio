@@ -4,12 +4,12 @@ import { FeaturedPost } from "@components/FeaturedPost";
 import { CallToAction } from "@components/CallToAction";
 import { fetchBlogPosts, fetchPage } from "@root/graphql";
 import { Media } from "@types";
+import { RenderBlocks } from "@components/RenderBlocks";
 
 export default async function Home() {
   const blogPosts = await fetchBlogPosts();
   const latestPost = blogPosts[0] ?? null;
   const home = await fetchPage("home");
-
   return (
     <>
       <HomeHero
@@ -17,8 +17,8 @@ export default async function Home() {
         description={home.hero.description}
         media={home.hero.media as Media}
       />
-      {latestPost && <FeaturedPost {...latestPost} />}
-      <CallToAction />
+
+      <RenderBlocks blocks={home.layout} />
     </>
   );
 }
