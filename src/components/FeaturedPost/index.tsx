@@ -15,8 +15,6 @@ export const FeaturedPost: React.FC<Props> = (props) => {
   const {
     featuredPostFields: { featuredPost },
   } = props;
-
-  console.log(props);
   if (typeof featuredPost != "string") {
     const { slug, image, category, title, publishedOn, summary } = featuredPost;
     return (

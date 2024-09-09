@@ -62,3 +62,20 @@ export const FEATURED_POST = `
     }
 }
 `;
+
+export const CTA = `
+...on Cta {
+    blockType
+    ctaFields {
+        links {
+            link {
+                url
+                type 
+                label
+            }
+        }
+
+        ctaContent
+    } 
+}
+`;
