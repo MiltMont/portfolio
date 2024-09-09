@@ -21,10 +21,11 @@ export const CTABlock: React.FC<Props> = (props) => {
           <RichText content={ctaContent} />
         </div>
         <div className={classes.links}>
-          {links?.map((link) => (
+          {links?.map((link, index) => (
             <Link
               href={link.link.url as string}
               className={[classes.link, "cols-4"].filter(Boolean).join(" ")}
+              key={index}
             >
               <>{link.link.label}</>
               <ArrowUpRight />
