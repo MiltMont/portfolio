@@ -18,13 +18,29 @@ const DisplayPosts: React.FC<Props> = (props) => {
     return null;
   }
   if (posts.length == 1) {
-    return <FeaturedPost {...posts[0]} />;
+    return (
+      <FeaturedPost
+        {...{
+          featuredPostFields: {
+            featuredPost: posts[0],
+          },
+          blockType: "featuredPost",
+        }}
+      />
+    );
   }
 
   if (posts.length == 2) {
     return (
       <>
-        <FeaturedPost {...posts[0]} />
+        <FeaturedPost
+          {...{
+            featuredPostFields: {
+              featuredPost: posts[0],
+            },
+            blockType: "featuredPost",
+          }}
+        />
         <Gutter className={classes.postsList}>
           <div className="grid">
             <div className="cols-8">
@@ -38,7 +54,14 @@ const DisplayPosts: React.FC<Props> = (props) => {
   // Assuming there are more than two posts.
   return (
     <>
-      <FeaturedPost {...posts[0]} />
+      <FeaturedPost
+        {...{
+          featuredPostFields: {
+            featuredPost: posts[0],
+          },
+          blockType: "featuredPost",
+        }}
+      />
       <Gutter className={classes.postsList}>
         <div
           className={["grid", classes.listContainer].filter(Boolean).join(" ")}
