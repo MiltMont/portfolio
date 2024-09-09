@@ -14,12 +14,8 @@ export const HomeHero: React.FC<Props> = ({ richText, description, media }) => {
   return (
     <div className={classes.layout}>
       <div className={classes.content}>
-        <div className={classes.heading}>
-          <RichText content={richText} />
-        </div>
-        <div className={classes.legend}>
-          <RichText content={description} />
-        </div>
+        <RichText content={richText} className={classes.heading} />
+        <RichText content={description} className={classes.description} />
       </div>
       <div className={classes.media}>
         <div className={classes.mediaWrapper}>

@@ -13,12 +13,22 @@
 }
 
 .heading {
-    @include h1;
-    margin: 0; 
-     @include mid-break {
-        margin-bottom: 1rem;
-        margin-top: 1rem; 
-     }
+    @include mid-break {
+        > h1, h2, h3, h4, p {
+            margin-top: calc(var(--base) * 2);
+            margin-bottom: var(--base);
+        }
+    }
+}
+
+.description {
+    @include mid-break {
+
+        > h1, h2, h3, h4, h5, h6, p, a{
+            margin-top: calc(var(--base)* 2);
+            margin-bottom: 0;
+        }
+    }
 }
 
 .legend {
@@ -28,7 +38,7 @@
     margin:0; 
     @include mid-break {
         width: 100%;
-        padding-top: calc(var(--base));
+        padding-top: 0;
     }
 }
 
@@ -62,7 +72,7 @@
     position: relative; 
     aspect-ratio: 4 / 4;
     @include mid-break {
-        aspect-ratio: 6 / 4;
+        aspect-ratio: 5 / 4;
     }
 }
 
