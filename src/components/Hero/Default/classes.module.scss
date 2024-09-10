@@ -1,44 +1,24 @@
-
 @use '@scss/common.scss' as *; 
 
-.hero {
+.layout {
     display: flex;
-
+    padding: 0;
+    padding-top: var(--page-padding-top);
     @include mid-break {
         flex-direction: column;
         gap: var(--base)
-      }
-}
-
-.heading {
-    @include h1; 
-    margin: 0; 
-
-    @include mid-break {
-        margin-bottom: 1rem;
     }
 }
 
-.legend {
-    @include h4;
-    padding-top: var(--base); 
-    width: 50%;
-    margin: 0;
-    @include mid-break {
-        width: 100%;
-    }
-}
-
-.content {
+.content{
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    gap: var(--base); 
+    justify-content: center;
     @include mid-break {
         width: 100%;
-        gap: calc(var(--base) / 2);
+        
     }
 }
 
@@ -46,19 +26,30 @@
     width: 50%;
     @include mid-break {
         width: 100%;
-        height: 20rem;
+
     }
 }
 
-.image {
-    object-fit: cover;
+.mediaWrapper {
+    display: block; 
+    position: relative;
+    text-decoration: none;
+    aspect-ratio: 5/4;
 }
 
-.mediaWrapper {
-    text-decoration: none;
-    display: block;
-    position: relative;
-    aspect-ratio: 5 / 4;
-    margin-bottom: 0;
-    width: calc(100%);
+.image {
+    object-fit: contain;
+
+    @include mid-break {
+        object-fit: cover;
+    }
+}
+
+.richText, .description {
+    @include mid-break {
+        > h1,h2,h3,h4,h5,h6, p, a {
+            margin-top: calc(var(--base) * 2);
+            margin-bottom: 0;
+        }
+    }
 }

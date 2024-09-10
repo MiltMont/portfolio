@@ -230,7 +230,7 @@ export interface Page {
         blockType: "content";
       }
     | {
-        ctaFields?: {
+        ctaFields: {
           settings?: {
             theme?: ("light" | "dark") | null;
           };

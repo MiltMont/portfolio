@@ -4,11 +4,15 @@ import { ContentBlock } from "@blocks/Content";
 import { CalloutBlock } from "@blocks/Callout";
 import { Page } from "@types";
 import MediaBlock from "@blocks/Media";
+import { FeaturedPost } from "@components/FeaturedPost";
+import { CTABlock } from "@blocks/CTA";
 
 const blockComponents = {
   content: ContentBlock,
   callout: CalloutBlock,
   mediaBlock: MediaBlock,
+  featuredPost: FeaturedPost,
+  cta: CTABlock,
 };
 
 export type BlocksProp = Page["layout"][0];
@@ -32,6 +36,7 @@ export const RenderBlocks: React.FC<Props> = (props) => {
             const Block = blockComponents[blockType];
 
             if (Block) {
+              /*@ts-ignore*/
               return <Block key={index} id={blockName} {...block} />;
             }
           }
