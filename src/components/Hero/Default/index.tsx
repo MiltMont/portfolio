@@ -2,26 +2,37 @@ import React from "react";
 import classes from "./classes.module.scss";
 import { Gutter } from "@components/Gutter";
 import Image from "next/image";
+import { Media, Page } from "@types";
+import { RichText } from "@components/Serialize";
 
-export const DefaultHero: React.FC<any> = ({}) => {
+type Props = Page["hero"];
+
+export const DefaultHero: React.FC<Props> = (props) => {
+  const { description, richText, media } = props;
+  {
+    /*
+    TODO: Implement default Hero component. 
+    */
+  }
   return (
-    <Gutter className={classes.hero}>
+    <Gutter className={classes.layout}>
       <div className={classes.content}>
-        <div className={classes.heading}>
-          Im Milton, a software developer, mathematician and AI Enthusiast.
-        </div>
-        <div className={classes.legend}>
-          You can find updates on my latest activity in this site.
-        </div>
+        <RichText content={richText} className={classes.richText} />
+        <RichText content={description} className={classes.description} />
       </div>
+
       <div className={classes.media}>
         <div className={classes.mediaWrapper}>
-          <Image
-            src={"/triangulation.png"}
-            alt={"triangulation"}
-            className={classes.image}
-            fill
-          />
+          {media && typeof media != "string" && (
+            <Image
+              src={`${process.env.NEXT_PUBLIC_CMS_URL}${encodeURI(
+                media.url as string
+              )}`}
+              alt={media.alt}
+              className={classes.image}
+              fill
+            />
+          )}
         </div>
       </div>
     </Gutter>

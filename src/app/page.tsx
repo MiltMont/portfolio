@@ -6,7 +6,6 @@ import { RenderBlocks } from "@components/RenderBlocks";
 
 export default async function Home() {
   const home = await fetchPage("home");
-  console.log(home.layout);
   return (
     <>
       <HomeHero

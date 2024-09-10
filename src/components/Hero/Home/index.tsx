@@ -23,7 +23,7 @@ export const HomeHero: React.FC<Props> = ({ richText, description, media }) => {
             src={`${process.env.NEXT_PUBLIC_CMS_URL}${encodeURI(
               media.url as string
             )}`}
-            alt={"triangulation"}
+            alt={media.alt}
             className={classes.image}
             fill
           />

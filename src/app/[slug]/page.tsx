@@ -24,8 +24,7 @@ const Page = async (props: Props) => {
   if (page) {
     return (
       <Gutter>
-        {/* TODO: Modify DefaultHero component */}
-        <DefaultHero />
+        <DefaultHero {...page.hero} />
         <RenderBlocks blocks={page.layout} />
       </Gutter>
     );
